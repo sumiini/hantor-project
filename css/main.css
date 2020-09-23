@@ -26,30 +26,37 @@ a{
 
 
 .global-nav {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 10;
 	width: 100%;
 	height: 44px;
 	padding: 0 1rem;
-}
-.global-nav{
+  background: white;
   border-bottom: 1px solid #ddd;
 }
+
 .global-nav-links{
-  /* 각 컴포넌트가 일정한 간격을 갖도록*/
   display: flex; /* 문자 길이만큼 배치되도록 설정한 것 */
   align-items: center;
+
   height: 100%;
   max-width: 1000px; /* 최대 1000px로 설정해 화면 크기가 1000px보다 작아지면 저절로 줄어들게 하기 위함*/
   margin: 0 auto;  /* 가운데 정렬을 해주기 위해 좌우 마진을 0으로 지정하고 auto로 설정 */
-  justify-content: space-between; /*해당 공간을 차지하는 컴포넌트들이 균일하게 차지하도록 space를 자동으로 삽입*/
 }
 
-.global-nav-links #logo{
-  font-size: 20px;
+/* 메뉴 부분 */
+.global-nav-links a:not(.global-nav-item){
+  margin-left: 2em;
+  font-size: 0.85rem;
+}
+
+/* 로고(한터 이름) 부분 */
+.global-nav-item{
+  font-size: 1.5rem;
   font-weight: bold;
+  margin-right: auto; /* 마진을 auto로 지정하는 이유는 내가 쓸 수 있는 공간을 사용할 수 있는 범위 내에서 최대로 사용하기 위함 */
 }
 
 .content {
@@ -60,16 +67,19 @@ a{
 .js-footer {
 	display: flex;
   bottom: 0;
-  position:absolute;
+  position:relative;
   width:100%;
 	align-items: center;
 	justify-content: center;
-	height: 7rem;
-	color: white;
-  background: gray;
+	height: 4rem;
+  background: rgb(12,65,99);
 }
 
-#facebook_btn, #instagram_btn, #kakaotalk_btn{
-  margin-left: 2em;
+.sns_btn button{
+  max-width: 1000px;
+  margin-left: 3em;
+  margin-right: 3em;
   color: white;
+  font-size: 15px;
+  font-weight: bold;
 }
