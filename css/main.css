@@ -34,7 +34,9 @@ a{
 	height: 44px;
 	padding: 0 1rem;
 }
-
+.global-nav{
+  border-bottom: 1px solid #ddd;
+}
 .global-nav-links{
   /* 각 컴포넌트가 일정한 간격을 갖도록*/
   display: flex; /* 문자 길이만큼 배치되도록 설정한 것 */
@@ -43,10 +45,31 @@ a{
   max-width: 1000px; /* 최대 1000px로 설정해 화면 크기가 1000px보다 작아지면 저절로 줄어들게 하기 위함*/
   margin: 0 auto;  /* 가운데 정렬을 해주기 위해 좌우 마진을 0으로 지정하고 auto로 설정 */
   justify-content: space-between; /*해당 공간을 차지하는 컴포넌트들이 균일하게 차지하도록 space를 자동으로 삽입*/
-  border-bottom: 1px solid #ddd;
 }
 
 .global-nav-links #logo{
   font-size: 20px;
   font-weight: bold;
+}
+
+.content {
+	position: relative;
+	padding-top: 50vh;
+}
+
+.js-footer {
+	display: flex;
+  bottom: 0;
+  position:absolute;
+  width:100%;
+	align-items: center;
+	justify-content: center;
+	height: 7rem;
+	color: white;
+  background: gray;
+}
+
+#facebook_btn, #instagram_btn, #kakaotalk_btn{
+  margin-left: 2em;
+  color: white;
 }
