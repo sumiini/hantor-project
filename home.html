@@ -2,9 +2,13 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <!-- device마다 맞는 뷰포트 적용 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/default.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/default.css">
     <title>Welcome to HANTOR</title>
   </head>
   <body>
@@ -13,9 +17,14 @@
       <nav class="global-nav">
         <div class="global-nav-links">
           <a href="#" class='global-nav-item'>Hantor</a>
-          <button type="button" class="intro-btn" onclick="location.href='intro.html'">한터소개</button>
+          <!-- 버튼으로 하면 누를 때 조금 어색해서 링크로 바꿧어.. 미안... -->
+          <a href="intro.html" class="intro-btn" target="_blank">한터소개</a>
+          <a href="notice.html" class="notice-btn" target="_blank">공지사항</a>
+          <a href="studyroom.html" class="studyroom-btn" target="_blank">스터디룸</a>
+
+          <!-- <button type="button" class="intro-btn" onclick="location.href='intro.html'">한터소개</button>
           <button type="button" class="notice-btn" onclick="location.href='notice.html'">공지사항</button>
-          <button type="button" class="studyroom-btn" onclick="location.href='studyroom.html'">스터디룸</button>
+          <button type="button" class="studyroom-btn" onclick="location.href='studyroom.html'">스터디룸</button> -->
 
         </div>
       </nav>
