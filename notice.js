@@ -1,5 +1,6 @@
 let noticeBtn = document.querySelector("button");
 let noticeUl = document.getElementById("noticeCo");
+let noticeTableSection = document.getElementById("noticeTable");
 let cnt = 0;
 let today = new Date();
 
@@ -19,17 +20,12 @@ function saveContent(){
 }
 
 noticeBtn.addEventListener("click" ,function(){
-    cnt++;
+    cnt+=1;
 
     
     let todayDate = '\t'+year+'/'+month+'/'+date;
 
-    addNotice.innerHTML = newNotice.value +'\t'+todayDate;
-
-
     
-    noticeUl.appendChild(addNotice);
-
     const noticeObj = {
         content: newNotice.value,
         todayDay : todayDate
@@ -40,9 +36,32 @@ noticeBtn.addEventListener("click" ,function(){
 
     saveContent();
 
+    function makeTable(){
+        let tableValue = document.getElementById("valueTable");
+        let tr = document.createElement("tr");
+        let tableContent = document.createElement("td");
+        let tableDate = document.createElement("td");
+        tableValue.appendChild(tr);
+
+        
+        tableContent.innerHTML=noticeContentArr[noticeContentArr.length-1].content;
+        tableDate.innerHTML=noticeContentArr[noticeContentArr.length-1].todayDay;
+    
+        tr.appendChild(tableContent);
+        tr.appendChild(tableDate);
+    
+    
+    }
+
+    makeTable();
+
     
     
 })
+
+
+
+
 
 
 
