@@ -12,7 +12,7 @@ let date = today.getDate();  // 날짜
 let addNotice = document.createElement("li");
 let newNotice = document.querySelector("textarea");
 
-let noticeContentArr = [];
+const noticeContentArr = [];
 function saveContent(){
     localStorage.setItem('noticeContent',JSON.stringify(noticeContentArr));
 
@@ -23,7 +23,7 @@ noticeBtn.addEventListener("click" ,function(){
     cnt+=1;
 
     
-    let todayDate = '\t'+year+'/'+month+'/'+date;
+    let todayDate = "\t"+year+'/'+month+'/'+date;
 
     
     const noticeObj = {
@@ -42,7 +42,6 @@ noticeBtn.addEventListener("click" ,function(){
         let tableContent = document.createElement("td");
         let tableDate = document.createElement("td");
         tableValue.appendChild(tr);
-
         
         tableContent.innerHTML=noticeContentArr[noticeContentArr.length-1].content;
         tableDate.innerHTML=noticeContentArr[noticeContentArr.length-1].todayDay;
