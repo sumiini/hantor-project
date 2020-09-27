@@ -56,9 +56,13 @@ a{
 .global-nav-links{
   justify-content: space-between;
 }
+
+.global-nav-links a{
+  font-size: 0.9rem;
+}
 /* 메뉴 부분 */
 .local-nav-links a:not(.local-nav-item){
-  margin-left: 2em;
+  margin-left: 1em;
   font-size: 0.85rem;
 }
 
@@ -71,15 +75,73 @@ a{
 
 .content-section {
 	position: relative;
-	padding-top: 30vh;
+	padding-top: 50vh;
+  border: 3px solid red;
+}
+
+.content-section h1{
+  font-size: 4rem;
+  text-align: center;
+}
+
+.main-message{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 35vh;
+  margin: 5px 0;
+  height: 3em;
+  font-size: 1.5rem;
+  opacity: 0;
+}
+
+.main-message p{
+  color: #889;
+  text-align: center;
+  line-height: 1.2em;
+}
+
+.main-message.c strong, .main-message.a strong{
+  color: darkblue;
+}
+/*
+#content-section-1 {
+  position: relative;
+  background-image: url(https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/30531227_620025675014553_9153415373314326528_o.jpg?_nc_cat=107&_nc_sid=b9115d&_nc_ohc=QjqZ6Z6_HBEAX-UGH0Y&_nc_ht=scontent-ssn1-1.xx&oh=4fe1998693313c7341e6f9d21364b91d&oe=5F961D94);
+  height: 100vh;
+  background-size: cover;
+}
+
+.img-cover{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index:1;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#content-section-1 .description{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 2;
+  text-align: center;
+} */
+
+.description{
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .js-footer {
 	display: flex;
   align-items: center;
   justify-content: center;
-  /* bottom: 0; */
-  position:relative;
+  bottom: 0;
+  position: relative;
   width:100%;
 	height: 52px;
   background: rgb(12,65,99);
@@ -93,7 +155,27 @@ a{
   font-weight: bold;
 }
 
+.sticky-elem{
+  display: none;
+  position: fixed;
+  /* top: 0; */
+  width: 100%;
+  left: 0;
+}
+
+#show-scene-0 #content-section-0 .sticky-elem{
+  display: block;
+}
+
 /* 가로 1024px 이상 화면을 가진 기기에서는 아래 css 적용 */
 @media (min-width: 1024px) {
-
+  .local-nav-links a:not(.local-nav-item){
+    margin-left: 2em;
+  }
+  .main-message{
+    font-size: 4vw;
+  }
+  /* #content-section-1 {
+    background-image: url(https://scontent-ssn1-1.xx.fbcdn.net/v/t1.0-9/30531227_620025675014553_9153415373314326528_o.jpg?_nc_cat=107&_nc_sid=b9115d&_nc_ohc=QjqZ6Z6_HBEAX-UGH0Y&_nc_ht=scontent-ssn1-1.xx&oh=4fe1998693313c7341e6f9d21364b91d&oe=5F961D94);
+  } */
 }
