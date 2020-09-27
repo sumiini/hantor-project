@@ -93,7 +93,7 @@ a{
 
 .menu_boxes{
   padding: 1rem 0;
-  max-width: 1000px;
+  margin: 0 10vh;
   justify-content: space-between;
 }
 
@@ -127,17 +127,6 @@ a{
   margin: 5px 0;
   height: 3em;
   font-size: 2rem;
-  opacity: 0;
-}
-
-.img{
-  position: relative;
-  top: 0;
-  height: 100%;
-  width: auto;
-  display: flex;
-  align-items: center;
-  margin: auto;
   opacity: 0;
 }
 
@@ -208,11 +197,12 @@ a{
   }
   .menu-boxes{
     padding: 10vh 0;
+    margin: 0 20vh;
   }
   .menu{
     font-size: 1.5rem;
-    width: 150px;
-    height: 150px;
-    line-height: 150px;
+    width: 130px;
+    height: 130px;
+    line-height: 130px;
   }
 }
