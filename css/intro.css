@@ -1,0 +1,29 @@
+.intro-main-section {
+  position: relative;
+  margin-top: 96px;
+  height: 100%;
+}
+
+.intro-img-section{
+  width: 25%;
+  float: left;
+}
+
+.intro-content-section{
+  width: 75%;
+  float: left;
+}
+
+.intro-main-section section{
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media query(min-width: 1024px) {
+  .intro-img-section{
+    float: left;
+  }
+
+  .intro-content-section{
+    float: left;
+  }
+}
