@@ -15,27 +15,32 @@
         messageA: document.querySelector('#content-section-0 .main-message.a'),
         messageB: document.querySelector('#content-section-0 .main-message.b'),
         messageC: document.querySelector('#content-section-0 .main-message.c'),
-        backimg: document.querySelector('#content-section-0 .backimage')
+        // backimg: document.querySelector('#content-section-0 .img.a'),
+        canvas: document.querySelector('#image-canvas'),
+        context: document.querySelector('#image-canvas').getContext('2d'),
+        Images: []
       },
       values: {
         messageA_opacity_in: [0, 1, {start: 0.1, end: 0.2}], // message A의 투명도를 0에서 1로 바뀌도록 설정하기 위함
-        messageA_opacity_out: [1, 0, {start: 0.25, end: 0.3}],
+        messageA_opacity_out: [1, 0, {start: 0.3, end: 0.35}],
         messageA_translateY_in: [20, 0, {start: 0.1, end: 0.2}], // message A의 위치 살짝 이동
-        messageA_translateY_out: [0, -20, {start: 0.25, end: 0.3}],
+        messageA_translateY_out: [0, -20, {start: 0.3, end: 0.35}],
 
-        messageB_opacity_in: [0, 1, {start: 0.3, end: 0.4}], // message B의 투명도 설정
-        messageB_opacity_out: [1, 0, {start: 0.45, end: 0.5}],
-        messageB_translateY_in: [20, 0, {start: 0.3, end: 0.4}], // message B의 위치 살짝 이동
-        messageB_translateY_out: [0, -20, {start: 0.45, end: 0.5}],
+        messageB_opacity_in: [0, 1, {start: 0.4, end: 0.5}], // message B의 투명도 설정
+        messageB_opacity_out: [1, 0, {start: 0.6, end: 0.65}],
+        messageB_translateY_in: [20, 0, {start: 0.4, end: 0.5}], // message B의 위치 살짝 이동
+        messageB_translateY_out: [0, -20, {start: 0.6, end: 0.65}],
 
-        messageC_opacity_in: [0, 1, {start: 0.5, end: 0.6}], // message C의 투명도 설정
-        messageC_opacity_out: [1, 0, {start: 0.65, end: 0.7}],
-        messageC_translateY_in: [20, 0, {start: 0.5, end: 0.6}], // message C의 위치 살짝 이동
-        messageC_translateY_out: [0, -20, {start: 0.65, end: 0.7}],
+        messageC_opacity_in: [0, 1, {start: 0.65, end: 1}], // message C의 투명도 설정
+        // messageC_opacity_out: [1, 0, {start: 0.65, end: 0.7}],
+        messageC_translateY_in: [20, 0, {start: 0.65, end: 1}], // message C의 위치 살짝 이동
+        messageC_translateY_out: [0, -20, {start: 0.9, end: 1}],
 
-        /*backimg_opacity_in: [0, 0.3, {start: 0, end: 1}],
-        backimg_opacity_out: [0.3, 0, {start: 0, end: 1}],
-        backimg_translateY_in: [20, 0, {start: 0, end: 1}],
+        canvas_opacity: [0, 0.5, {start: 0, end: 1}],
+        // backimg_opacity_in: [0, 0.5, {start: 0, end: 1}]
+
+        // backimg_opacity_out: [0.3, 0, {start: 55, end: 1}],
+        /*backimg_translateY_in: [20, 0, {start: 0, end: 1}],
         backimg_translateY_out: [0, -20, {start: 0.65, end: 1}]*/
       }
     },
@@ -49,6 +54,22 @@
       }
     }
   ];
+
+  function setCanvasImage(){
+    let imgElem;
+
+    imgElem = new Image();
+    imgElem.src = `./images/img${4}.jpg`;
+    sceneInfo[0].objs.Images.push(imgElem);
+  }
+
+  function checkMenu() {
+    if(yOffset > 44){
+      document.body.classList.add('local-nav-sticky');
+    } else{
+      document.body.classList.remove('local-nav-sticky');
+    }
+  }
 
   function setLayout(){
     // 각 scroll section의 높이를 세팅
@@ -71,6 +92,8 @@
       }
     }
     document.body.setAttribute('id', `show-scene-${currentScene}`);
+    const heightRatio = window.innerHeight / 1334;
+    sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
   }
 
   function calcValues(values, currentYOffset){
@@ -111,25 +134,30 @@
 
     switch (currentScene) {
       case 0:
-        if (scrollRatio <= 0.22) {
+        objs.context.drawImage(objs.Images[0], 0, 0);
+        objs.canvas.style.opacity = calcValues(values.canvas_opacity, currentYOffset);
+        // if (scrollRatio <= 1) {
+        //   objs.backimg.style.opacity = calcValues(values.backimg_opacity_in, currentYOffset);
+        // }
+        if (scrollRatio <= 0.27) {
           objs.messageA.style.opacity = calcValues(values.messageA_opacity_in, currentYOffset);
           objs.messageA.style.transform = `translate3d(0, ${calcValues(values.messageA_translateY_in, currentYOffset)}%, 0)`;
         } else{
           objs.messageA.style.opacity = calcValues(values.messageA_opacity_out, currentYOffset);
           objs.messageA.style.transform = `translate3d(0, ${calcValues(values.messageA_translateY_out, currentYOffset)}%, 0)`;
         }
-        if (scrollRatio <= 0.42) {
+        if (scrollRatio <= 0.57) {
           objs.messageB.style.opacity = calcValues(values.messageB_opacity_in, currentYOffset);
           objs.messageB.style.transform = `translate3d(0, ${calcValues(values.messageB_translateY_in, currentYOffset)}%, 0)`;
         } else{
           objs.messageB.style.opacity = calcValues(values.messageB_opacity_out, currentYOffset);
           objs.messageB.style.transform = `translate3d(0, ${calcValues(values.messageB_translateY_out, currentYOffset)}%, 0)`;
         }
-        if (scrollRatio <= 0.62) {
+        if (scrollRatio <= 1) {
           objs.messageC.style.opacity = calcValues(values.messageC_opacity_in, currentYOffset);
           objs.messageC.style.transform = `translate3d(0, ${calcValues(values.messageC_translateY_in, currentYOffset)}%, 0)`;
         } else{
-          objs.messageC.style.opacity = calcValues(values.messageC_opacity_out, currentYOffset);
+          // objs.messageC.style.opacity = calcValues(values.messageC_opacity_out, currentYOffset);
           objs.messageC.style.transform = `translate3d(0, ${calcValues(values.messageC_translateY_out, currentYOffset)}%, 0)`;
         }
         break;
@@ -167,9 +195,12 @@
   window.addEventListener('scroll', () => {
     yOffset = window.pageYOffset;
     scrollLoop();
+    checkMenu();
   });
   window.addEventListener('load', setLayout);
   window.addEventListener('resize', setLayout);
+  setCanvasImage();
+
 })();
 // 함수를 바로 호출
 // 전역변수로 사용하지 않고 지역 변수 사용을 추천
