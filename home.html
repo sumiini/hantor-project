@@ -19,17 +19,17 @@
           <a href="https://portal.ajou.ac.kr" target="_blank" class='global-nav-item'>Ajou Portal</a>
           <a href="https://eclass2.ajou.ac.kr/" target="_blank" class='global-nav-item'>BlackBoard</a>
           <a href="https://github.com/" target="_blank" class='global-nav-item'>Github</a>
-          <a href="https://www.apple.com/kr/" target="_blank" class='global-nav-item'>Apple</a>
+          <a href="https://www.apple.com/kr-k12/shop?afid=p238%7CsyQ1OEsz4-dc_mtid_18707vxu38484_pcrid_258798361876_pgrid_50422948013_&cid=aos-kr-kwgo-edu--slid---product--" target="_blank" class='global-nav-item'>Apple 교육할인</a>
         </div>
       </nav>
       <!-- 상단 메뉴바  -->
       <nav class="local-nav">
         <div class="local-nav-links">
-          <a href="#" class='local-nav-item'>Hantor</a>
+          <a href="home.html" class='local-nav-item' target="_self">Hantor</a>
           <!-- 버튼으로 하면 누를 때 조금 어색해서 링크로 바꿧어.. 미안... -->
-          <a href="intro.html" class="intro-btn" target="_blank">한터소개</a>
-          <a href="notice.html" class="notice-btn" target="_blank">공지사항</a>
-          <a href="studyroom.html" class="studyroom-btn" target="_blank">스터디룸</a>
+          <a href="intro.html" class="intro-btn" target="_self">한터소개</a>
+          <a href="notice.html" class="notice-btn" target="_self">공지사항</a>
+          <a href="studyroom.html" class="studyroom-btn" target="_self">스터디룸</a>
 
           <!-- <button type="button" class="intro-btn" onclick="location.href='intro.html'">한터소개</button>
           <button type="button" class="notice-btn" onclick="location.href='notice.html'">공지사항</button>
@@ -38,6 +38,12 @@
       </nav>
       <section class="content-section" id="content-section-0">
 				<h1>HANTOR</h1>
+        <!-- <div class="sticky-elem img a">
+          <img src="images/img4.jpg" alt="butggot" height="1778" width="1334">
+        </div> -->
+        <div class="sticky-elem sticky-elem-canvas">
+					<canvas id="image-canvas" width="1778" height="1334"></canvas>
+				</div>
         <div class="sticky-elem main-message a">
           <p>
             아주대학교 소프트웨어학과<br>
@@ -59,12 +65,17 @@
 			</section>
 
 			<section class="content-section" id="content-section-1">
-        <p class="description">
+        <div class="menu-boxes">
+          <div class="menu" id="menu_intro" onclick="location.href='intro.html';">한터 소개</div>
+          <div class="menu" id="menu_notice" onclick="location.href='notice.html';">공지사항</div>
+          <div class="menu" id="menu_studyroom" onclick="location.href='studyroom.html';">스터디룸</div>
+        </div>
+        <!-- <p class="description">
           대충 설명글이 오는 곳.
-        </p>
-        <div class="img-cover"></div>
+        </p> -->
       </section>
       <!-- 하단 sns 링크 바 -->
+
       <footer class="js-footer">
         <div class="sns_btn">
           <button id="facebook_btn" onclick="">facebook</button>
@@ -72,6 +83,7 @@
           <button id="kakaotalk_btn" onclick="">kakaotalk</button>
         </div>
       </footer>
+
       <script src="footer.js"></script>
       <script src="js/main.js" charset="utf-8"></script>
     </div>
