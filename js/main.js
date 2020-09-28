@@ -59,7 +59,7 @@
     let imgElem;
 
     imgElem = new Image();
-    imgElem.src = `./images/img${4}.jpg`;
+    imgElem.src = `./images/img${7}.jpg`;
     sceneInfo[0].objs.Images.push(imgElem);
   }
 
