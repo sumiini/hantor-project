@@ -1,14 +1,8 @@
 .intro-content-section{
   padding: 12vh auto;
+  padding-top: 20vh;
 }
 
-.intro-content-section div{
-  padding-top: 50vh;
-}
-
-.intro-img{
-  background-image: url(/images/img4.jpg);
-  background-position: 50% 50%;
-  display: flex;
-  align-items: center;
+.descmesg{
+  padding: 0 1rem;
 }
