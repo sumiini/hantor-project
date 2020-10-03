@@ -23,7 +23,7 @@ a{
   color: rgb(29,29,31);
   text-decoration: none;
 }
-.global-nav{
+.global-menu{
   position: absolute;
   top: 0;
   left: 0;
@@ -34,7 +34,7 @@ a{
 }
 
 /* 상단 메뉴바 */
-.local-nav {
+.local-menu {
   position: absolute;
   top: 45px;
   left: 0;
@@ -45,14 +45,14 @@ a{
   border-bottom: 1px solid #ddd;
 }
 
-.local-nav-sticky .local-nav{
+.local-menu-sticky .local-menu{
   position: fixed;
   top: 0;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: saturate(180%) blur(15px);
 }
 
-.global-nav-links, .local-nav-links{
+.global-menu-links, .local-menu-links{
   display: flex; /* 문자 길이만큼 배치되도록 설정한 것 */
   align-items: center;
   height: 100%;
@@ -60,21 +60,21 @@ a{
   margin: 0 auto;  /* 가운데 정렬을 해주기 위해 좌우 마진을 0으로 지정하고 auto로 설정 */
 }
 
-.global-nav-links{
+.global-menu-links{
   justify-content: space-between;
 }
 
-.global-nav-links a{
+.global-menu-links a{
   font-size: 0.9rem;
 }
 /* 메뉴 부분 */
-.local-nav-links a:not(.local-nav-item){
+.local-menu-links a:not(.local-menu-item){
   margin-left: 1em;
   font-size: 0.85rem;
 }
 
 /* 로고(한터 이름) 부분 */
-.local-nav-item{
+.local-menu-item{
   font-size: 1.5rem;
   font-weight: bold;
   margin-right: auto; /* 마진을 auto로 지정하는 이유는 내가 쓸 수 있는 공간을 사용할 수 있는 범위 내에서 최대로 사용하기 위함 */
@@ -82,7 +82,7 @@ a{
 
 .content-section{
 	position: relative;
-  padding-top: 35vh;
+  padding-top: 45vh;
 }
 
 .menu-boxes{
@@ -116,7 +116,7 @@ a{
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 30vh;
+  top: 40vh;
   margin: 5px 0;
   height: 3em;
   font-size: 2rem;
@@ -139,7 +139,7 @@ a{
   line-height: 1.2em;
 }
 
-.main-message.c strong, .main-message.a strong{
+.main-message.d strong, .main-message.a strong{
   color: rgb(12,65,99);
 }
 
@@ -186,7 +186,7 @@ a{
     font-size: 8rem;
     letter-spacing: 1.5rem;
   }
-  .local-nav-links a:not(.local-nav-item){
+  .local-menu-links a:not(.local-menu-item){
     margin-left: 2em;
   }
   .main-message{
