@@ -2,7 +2,6 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <!-- device마다 맞는 뷰포트 적용 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
@@ -13,34 +12,24 @@
   </head>
   <body>
     <div class="container">
-      <!-- 자주가는 사이트 추가(심심해서 넣음) -->
-      <nav class="global-nav">
-        <div class="global-nav-links">
-          <a href="https://portal.ajou.ac.kr" target="_blank" class='global-nav-item'>Ajou Portal</a>
-          <a href="https://eclass2.ajou.ac.kr/" target="_blank" class='global-nav-item'>BlackBoard</a>
-          <a href="https://github.com/" target="_blank" class='global-nav-item'>Github</a>
-          <a href="https://www.apple.com/kr-k12/shop?afid=p238%7CsyQ1OEsz4-dc_mtid_18707vxu38484_pcrid_258798361876_pgrid_50422948013_&cid=aos-kr-kwgo-edu--slid---product--" target="_blank" class='global-nav-item'>Apple 교육할인</a>
+      <nav class="global-menu">
+        <div class="global-menu-links">
+          <a href="https://portal.ajou.ac.kr" target="_blank" class='global-menu-item'>Ajou Portal</a>
+          <a href="https://eclass2.ajou.ac.kr/" target="_blank" class='global-menu-item'>BlackBoard</a>
+          <a href="https://github.com/" target="_blank" class='global-menu-item'>Github</a>
+          <a href="https://www.apple.com/kr-k12/shop?afid=p238%7CsyQ1OEsz4-dc_mtid_18707vxu38484_pcrid_258798361876_pgrid_50422948013_&cid=aos-kr-kwgo-edu--slid---product--" target="_blank" class='global-menu-item'>Apple 교육할인</a>
         </div>
       </nav>
-      <!-- 상단 메뉴바  -->
-      <nav class="local-nav">
-        <div class="local-nav-links">
-          <a href="home.html" class='local-nav-item' target="_self">Hantor</a>
-          <!-- 버튼으로 하면 누를 때 조금 어색해서 링크로 바꿧어.. 미안... -->
+      <nav class="local-menu">
+        <div class="local-menu-links">
+          <a href="home.html" class='local-menu-item' target="_self">Hantor</a>
           <a href="intro.html" class="intro-btn" target="_self">한터소개</a>
           <a href="notice.html" class="notice-btn" target="_self">공지사항</a>
           <a href="studyroom.html" class="studyroom-btn" target="_self">스터디룸</a>
-
-          <!-- <button type="button" class="intro-btn" onclick="location.href='intro.html'">한터소개</button>
-          <button type="button" class="notice-btn" onclick="location.href='notice.html'">공지사항</button>
-          <button type="button" class="studyroom-btn" onclick="location.href='studyroom.html'">스터디룸</button> -->
         </div>
       </nav>
       <section class="content-section" id="content-section-0">
 				<h1>HANTOR</h1>
-        <!-- <div class="sticky-elem img a">
-          <img src="images/img4.jpg" alt="butggot" height="1778" width="1334">
-        </div> -->
         <div class="sticky-elem sticky-elem-canvas">
 					<canvas id="image-canvas" width="1778" height="1334"></canvas>
 				</div>
@@ -52,14 +41,20 @@
         </div>
         <div class="sticky-elem main-message b">
           <p>
-            다양한 스터디부터 프로젝트까지<br>
+            다양한 <strong>스터디부터 프로젝트</strong>까지<br>
             원하는대로
           </p>
         </div>
         <div class="sticky-elem main-message c">
           <p>
+            <strong>학술제, MT, 회식</strong> 등<br>
+            다양한 행사까지
+          </p>
+        </div>
+        <div class="sticky-elem main-message d">
+          <p>
             반가워요<br>
-            여러분은 이제 <strong>한터</strong>입니다
+            여기까지 봤다면 당신은 이제 <strong>한터</strong>입니다
           </p>
         </div>
 			</section>
@@ -70,11 +65,8 @@
           <div class="menu" id="menu_notice" onclick="location.href='notice.html';">공지사항</div>
           <div class="menu" id="menu_studyroom" onclick="location.href='studyroom.html';">스터디룸</div>
         </div>
-        <!-- <p class="description">
-          대충 설명글이 오는 곳.
-        </p> -->
+        
       </section>
-      <!-- 하단 sns 링크 바 -->
 
       <footer class="js-footer">
         <div class="sns_btn">

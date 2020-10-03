@@ -4,6 +4,7 @@
   let currentScene = 0; // 현재 활성화된 scene의 번호를 저장할 변수
   let enterNewScene = false; // 새로운 scene으로 바뀐 순간 true로 변경
 
+
   const sceneInfo = [
     {
       // content-section-0
@@ -15,33 +16,32 @@
         messageA: document.querySelector('#content-section-0 .main-message.a'),
         messageB: document.querySelector('#content-section-0 .main-message.b'),
         messageC: document.querySelector('#content-section-0 .main-message.c'),
-        // backimg: document.querySelector('#content-section-0 .img.a'),
+        messageD: document.querySelector('#content-section-0 .main-message.d'),
         canvas: document.querySelector('#image-canvas'),
         context: document.querySelector('#image-canvas').getContext('2d'),
         Images: []
       },
       values: {
-        messageA_opacity_in: [0, 1, {start: 0.1, end: 0.2}], // message A의 투명도를 0에서 1로 바뀌도록 설정하기 위함
-        messageA_opacity_out: [1, 0, {start: 0.3, end: 0.35}],
-        messageA_translateY_in: [20, 0, {start: 0.1, end: 0.2}], // message A의 위치 살짝 이동
-        messageA_translateY_out: [0, -20, {start: 0.3, end: 0.35}],
+        messageA_opacity_in: [0, 1, {start: 0.1, end: 0.2}], 
+        messageA_opacity_out: [1, 0, {start: 0.25, end: 0.3}],
+        messageA_translateY_in: [20, 0, {start: 0.1, end: 0.2}],
+        messageA_translateY_out: [0, -20, {start: 0.25, end: 0.3}],
 
-        messageB_opacity_in: [0, 1, {start: 0.4, end: 0.5}], // message B의 투명도 설정
-        messageB_opacity_out: [1, 0, {start: 0.6, end: 0.65}],
-        messageB_translateY_in: [20, 0, {start: 0.4, end: 0.5}], // message B의 위치 살짝 이동
-        messageB_translateY_out: [0, -20, {start: 0.6, end: 0.65}],
+        messageB_opacity_in: [0, 1, {start: 0.35, end: 0.45}],
+        messageB_opacity_out: [1, 0, {start: 0.5, end: 0.55}],
+        messageB_translateY_in: [20, 0, {start: 0.35, end: 0.45}],
+        messageB_translateY_out: [0, -20, {start: 0.5, end: 0.55}],
+        
+        messageC_opacity_in: [0, 1, {start: 0.6, end: 0.7}],
+        messageC_opacity_out: [1, 0, {start: 0.75, end: 0.8}],
+        messageC_translateY_in: [20, 0, {start: 0.6, end: 0.7}],
+        messageC_translateY_out: [0, -20, {start: 0.75, end: 0.8}],
 
-        messageC_opacity_in: [0, 1, {start: 0.65, end: 1}], // message C의 투명도 설정
-        // messageC_opacity_out: [1, 0, {start: 0.65, end: 0.7}],
-        messageC_translateY_in: [20, 0, {start: 0.65, end: 1}], // message C의 위치 살짝 이동
-        messageC_translateY_out: [0, -20, {start: 0.9, end: 1}],
+        messageD_opacity_in: [0, 1, {start: 0.85, end: 1}],
+        messageD_translateY_in: [20, 0, {start: 0.85, end: 1}],
+        messageD_translateY_out: [0, -20, {start: 0.9, end: 1}],
 
-        canvas_opacity: [0, 0.5, {start: 0, end: 1}],
-        // backimg_opacity_in: [0, 0.5, {start: 0, end: 1}]
-
-        // backimg_opacity_out: [0.3, 0, {start: 55, end: 1}],
-        /*backimg_translateY_in: [20, 0, {start: 0, end: 1}],
-        backimg_translateY_out: [0, -20, {start: 0.65, end: 1}]*/
+        canvas_opacity: [0, 0.5, {start: 0, end: 1}]
       }
     },
     {
@@ -65,9 +65,9 @@
 
   function checkMenu() {
     if(yOffset > 44){
-      document.body.classList.add('local-nav-sticky');
+      document.body.classList.add('local-menu-sticky');
     } else{
-      document.body.classList.remove('local-nav-sticky');
+      document.body.classList.remove('local-menu-sticky');
     }
   }
 
@@ -136,29 +136,36 @@
       case 0:
         objs.context.drawImage(objs.Images[0], 0, 0);
         objs.canvas.style.opacity = calcValues(values.canvas_opacity, currentYOffset);
-        // if (scrollRatio <= 1) {
-        //   objs.backimg.style.opacity = calcValues(values.backimg_opacity_in, currentYOffset);
-        // }
-        if (scrollRatio <= 0.27) {
+
+        if (scrollRatio <= 0.22) {
           objs.messageA.style.opacity = calcValues(values.messageA_opacity_in, currentYOffset);
           objs.messageA.style.transform = `translate3d(0, ${calcValues(values.messageA_translateY_in, currentYOffset)}%, 0)`;
         } else{
           objs.messageA.style.opacity = calcValues(values.messageA_opacity_out, currentYOffset);
           objs.messageA.style.transform = `translate3d(0, ${calcValues(values.messageA_translateY_out, currentYOffset)}%, 0)`;
         }
-        if (scrollRatio <= 0.57) {
+
+        if (scrollRatio <= 0.47) {
           objs.messageB.style.opacity = calcValues(values.messageB_opacity_in, currentYOffset);
           objs.messageB.style.transform = `translate3d(0, ${calcValues(values.messageB_translateY_in, currentYOffset)}%, 0)`;
         } else{
           objs.messageB.style.opacity = calcValues(values.messageB_opacity_out, currentYOffset);
           objs.messageB.style.transform = `translate3d(0, ${calcValues(values.messageB_translateY_out, currentYOffset)}%, 0)`;
         }
-        if (scrollRatio <= 1) {
+
+        if (scrollRatio <= 0.72) {
           objs.messageC.style.opacity = calcValues(values.messageC_opacity_in, currentYOffset);
           objs.messageC.style.transform = `translate3d(0, ${calcValues(values.messageC_translateY_in, currentYOffset)}%, 0)`;
         } else{
-          // objs.messageC.style.opacity = calcValues(values.messageC_opacity_out, currentYOffset);
+          objs.messageC.style.opacity = calcValues(values.messageC_opacity_out, currentYOffset);
           objs.messageC.style.transform = `translate3d(0, ${calcValues(values.messageC_translateY_out, currentYOffset)}%, 0)`;
+        }
+
+        if (scrollRatio <= 1) {
+          objs.messageD.style.opacity = calcValues(values.messageD_opacity_in, currentYOffset);
+          objs.messageD.style.transform = `translate3d(0, ${calcValues(values.messageD_translateY_in, currentYOffset)}%, 0)`;
+        } else{
+          objs.messageD.style.transform = `translate3d(0, ${calcValues(values.messageD_translateY_out, currentYOffset)}%, 0)`;
         }
         break;
     }
@@ -166,22 +173,21 @@
 
   function scrollLoop() {
     enterNewScene = false;
-    prevScrollHeight = 0; // 스크롤 될 떄마다 for문이 4번이 반복되는데
-                          // 이렇게 되는 경우 prevScrollHeight값이 기하급수적으로 증가하므로 0으로 초기화
+    prevScrollHeight = 0;
     for(let i=0; i<currentScene; i++){
       prevScrollHeight += sceneInfo[i].scrollHeight;
     }
+
     if(yOffset > prevScrollHeight+sceneInfo[currentScene].scrollHeight){
       enterNewScene = true;
       currentScene++;
-      // 현재 스크롤 섹션이 어딘지에 따라 body의 id 속성값을 업데이트하는 작업
       document.body.setAttribute('id', `show-scene-${currentScene}`);
     }
+
     if(yOffset < prevScrollHeight){
       enterNewScene = true;
       if(currentScene === 0) return;
       currentScene--;
-      // 현재 스크롤 섹션이 어딘지에 따라 body의 id 속성값을 업데이트하는 작업
       document.body.setAttribute('id', `show-scene-${currentScene}`);
     }
 
@@ -189,18 +195,47 @@
 
     playAnimation();
   }
-
   // 창의 세로 크기가 변할 때마다 setlayout 함수를 호출함으로써
   // 인터렉티브하게 적용될 수 있도록 창의 크기를 업데이트
-  window.addEventListener('scroll', () => {
-    yOffset = window.pageYOffset;
-    scrollLoop();
-    checkMenu();
-  });
-  window.addEventListener('load', setLayout);
-  window.addEventListener('resize', setLayout);
-  setCanvasImage();
+  window.addEventListener('load', ()=>{
+    setLayout();
 
+    let tempYOffset = yOffset;
+    let tempScrollCount = 0;
+
+    if(yOffset > 0){
+      let siId = setInterval(() => {
+        window.scrollTo(0, tempYOffset);
+        tempYOffset+=5;
+  
+        if(tempScrollCount > 20){
+          clearInterval(siId);
+        }
+        tempScrollCount++;
+      }, 20);
+    }
+
+    window.addEventListener('scroll', () => {
+      yOffset = window.pageYOffset;
+      scrollLoop();
+      checkMenu();
+    });
+
+    window.addEventListener('resize', ()=>{
+      if(window.innerWidth > 900){
+        window.location.reload();
+      }
+  
+    });
+  
+    window.addEventListener('orientationchange', ()=>{
+      scrollTo(0, 0);
+      setTimeout(()=>{
+        window.location.reload();
+      });
+    });
+  });
+  setCanvasImage();
 })();
 // 함수를 바로 호출
 // 전역변수로 사용하지 않고 지역 변수 사용을 추천
