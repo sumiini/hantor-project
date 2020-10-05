@@ -41,7 +41,7 @@
         messageD_translateY_in: [20, 0, {start: 0.85, end: 1}],
         messageD_translateY_out: [0, -20, {start: 0.9, end: 1}],
 
-        canvas_opacity: [0, 0.5, {start: 0, end: 1}]
+        canvas_opacity: [0, 0.6, {start: 0, end: 1}]
       }
     },
     {
@@ -93,7 +93,7 @@
     }
     document.body.setAttribute('id', `show-scene-${currentScene}`);
     const heightRatio = window.innerHeight / 1334;
-    sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio})`;
+    sceneInfo[0].objs.canvas.style.transform = `translate3d(-50%, -50%, 0) scale(${heightRatio*1.25})`;
   }
 
   function calcValues(values, currentYOffset){

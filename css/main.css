@@ -139,6 +139,9 @@ a{
   line-height: 1.2em;
 }
 
+.main-message.d{
+
+}
 .main-message.d strong, .main-message.a strong{
   color: rgb(12,65,99);
 }
