@@ -6,7 +6,7 @@
   const sceneInfo = [
     {
       type: 'normal',
-      heightNum: 5,
+      heightNum: 2,
       scrollHeight: 0,
       objs: {
         container: document.querySelector('.intro-content-section')
@@ -16,9 +16,9 @@
   ];
   function checkMenu() {
     if(yOffset > 44){
-      document.body.classList.add('local-nav-sticky');
+      document.body.classList.add('local-menu-sticky');
     } else{
-      document.body.classList.remove('local-nav-sticky');
+      document.body.classList.remove('local-menu-sticky');
     }
   }
 
@@ -65,11 +65,28 @@
     if (enterNewScene) return;
   }
 
-  window.addEventListener('scroll', () => {
-    yOffset = window.pageYOffset;
-    scrollLoop();
-    checkMenu();
+  window.addEventListener('load', ()=>{
+    setLayout();
+
+    window.addEventListener('scroll', () => {
+      yOffset = window.pageYOffset;
+      scrollLoop();
+      checkMenu();
+    });
+
+    window.addEventListener('resize', ()=>{
+      if(window.innerWidth > 900){
+        window.location.reload();
+      }
+    });
+
+    window.addEventListener('orientationchange', ()=>{
+      scrollTo(0, 0);
+      setTimeout(()=>{
+        window.location.reload();
+      });
+    });
+
   });
-  window.addEventListener('load', setLayout);
-  window.addEventListener('resize', setLayout);
+
 })();
