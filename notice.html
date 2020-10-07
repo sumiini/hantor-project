@@ -37,28 +37,28 @@
         
         <section class="intro-content-section">
          
-            
-            <a href="notice_add.html" >글쓰기</a>
-    
-            
-            <section id="noticeCo">
-                    
-    
-            </section>
+          <form name="add_notice" method="POST" action="notice.php">
 
-            <section id="noticeTable">
-              <table id="newTable" >
-                <tr id="upT">
-                  <th id="up1">내용</th>
-                  <th id="up2">Date</th>
+            <h1>input notice content</h1>
+              <table >
+                <tr>
+                  <td>NUMBER</td>
+                  <td><input type="text" size="30" name="number"></td>
                 </tr>
-                <tr id="valueTable">
-
+                <tr>
+                  <td>DATE</td>
+                  <td><input type="text" size="12" maxlength="10" name="date"></td>
                 </tr>
-
+                <tr>
+                  <td>CONTENT</td>
+                  <td><input type="text" size="100" name="position"></td>
+                </tr>
               </table>
 
-            </section>
+            <input type=submit value="submit"><input type=reset value="rewrite">
+            
+              
+          </form>
         </section>
       </nav>
       <!-- 하단 sns 링크 바 -->
