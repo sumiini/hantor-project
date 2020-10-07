@@ -8,16 +8,19 @@ let year = today.getFullYear(); // 년도
 let month = today.getMonth() + 1;  // 월
 let date = today.getDate();  // 날짜
 
-//forEach 랑 filter는 list에 있는 모든 item을 위한 함수를 실행시키는 것
 let addNotice = document.createElement("li");
 let newNotice = document.querySelector("textarea");
-
+const NOTICE_LS='noticeContent';
 const noticeContentArr = [];
 function saveContent(){
     localStorage.setItem('noticeContent',JSON.stringify(noticeContentArr));
+
+    localStorage.setItem(NOTICE_LS,JSON.stringify(noticeContentArr));
+
+
 }
 
-noticeBtn.addEventListener("click" ,function(){
+noticeBtn.addEventListener("click" ,function paintNotice(text){
     cnt+=1;
 
     
@@ -53,10 +56,30 @@ noticeBtn.addEventListener("click" ,function(){
     makeTable();
 
     
+
+    
     
 })
 
+function loadNotice(){
+    const loadedNotice = localStorage.getItem(NOTICE_LS);
+    if(loadedNotice!==null){
+        const parsedNotice = JSON.parse(loadedNotice);
+        parsedNotice.forEach(function(noTice){
+            paintNotice(noTice.content);
+        });
+    }
+}
 
+loadNotice();
+
+function handleSubmit(event){
+    event.preventDefault();
+    const currentValue = newNotice.value;
+    paintNotice(currentValue);
+    newNotice.value="";
+
+}
 
 
 
