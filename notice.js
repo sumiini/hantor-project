@@ -15,8 +15,6 @@ let newNotice = document.querySelector("textarea");
 const noticeContentArr = [];
 function saveContent(){
     localStorage.setItem('noticeContent',JSON.stringify(noticeContentArr));
-
-
 }
 
 noticeBtn.addEventListener("click" ,function(){
