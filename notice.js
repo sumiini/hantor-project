@@ -13,6 +13,8 @@ let newNotice = document.querySelector("textarea");
 const NOTICE_LS='noticeContent';
 const noticeContentArr = [];
 function saveContent(){
+    localStorage.setItem('noticeContent',JSON.stringify(noticeContentArr));
+
     localStorage.setItem(NOTICE_LS,JSON.stringify(noticeContentArr));
 
 
