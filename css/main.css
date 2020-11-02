@@ -50,11 +50,6 @@ a{
   top: 0;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: saturate(180%) blur(15px);
-  -webkit-filter: saturate(180%) blur(15px);
-  -moz-filter: saturate(180%) blur(15px);
-  -o-filter: saturate(180%) blur(15px);
-  -ms-filter: saturate(180%) blur(15px);
-  filter: saturate(180%) blur(15px);
 }
 
 .global-menu-links, .local-menu-links{
