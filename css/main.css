@@ -180,8 +180,8 @@ a{
   display: block;
 }
 
-/* 가로 1024px 이상 화면을 가진 기기에서는 아래 css 적용 */
-@media (min-width: 1024px) {
+/* 가로 1000px 이상 화면을 가진 기기에서는 아래 css 적용 */
+@media (min-width: 1000px) {
   .content-section h1{
     font-size: 8rem;
     letter-spacing: 1.5rem;
@@ -201,14 +201,25 @@ a{
   .main-message{
     font-size: 4vw;
   }
+
   .menu-boxes{
-    padding: 10vh 0;
-    margin: 0 30vh;
+    display: flex;
+    align-items: center;
+    margin: auto;
   }
+  
   .menu{
-    font-size: 1.5rem;
-    width: 130px;
-    height: 130px;
-    line-height: 130px;
+    margin: auto;
+    width: 120px;
+    height: 120px;
+    background-color: rgb(12,65,99);
+    border-radius: 50%;
+  
+    cursor: pointer;
+    font-size: 2vw;
+    text-align: center;
+    line-height: 120px;
+  
+    color: white;
   }
 }
