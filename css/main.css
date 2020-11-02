@@ -139,9 +139,6 @@ a{
   line-height: 1.2em;
 }
 
-.main-message.d{
-
-}
 .main-message.d strong, .main-message.a strong{
   color: rgb(12,65,99);
 }
@@ -189,6 +186,15 @@ a{
     font-size: 8rem;
     letter-spacing: 1.5rem;
   }
+
+  
+  .local-menu-sticky .local-menu{
+    position: fixed;
+    top: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: saturate(180%) blur(15px);
+  }
+  
   .local-menu-links a:not(.local-menu-item){
     margin-left: 2em;
   }
