@@ -4,8 +4,8 @@
 <?php
  
 $host = 'localhost';
-$user = 'root';
-$pw = 'sumin8411';
+$user = 'dondon';
+$pw = '5Susdpdlf!';
 $dbName = 'opentutorials';
 $mysqli = new mysqli($host, $user, $pw, $dbName);
 
