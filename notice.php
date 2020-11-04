@@ -26,5 +26,5 @@ mysqli_close($mysqli);
  
  
 ?>
-<input type="button" value="다시 글 등록하기" onclick="location='notice.php'">
+<input type="button" value="다시 글 등록하기" onclick="location='notice.html'">
 </html>
