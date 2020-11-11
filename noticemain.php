@@ -53,7 +53,7 @@
           <?php
             // phpinfo();
             // 1, DB 연결 mysqli_connect(호스트 주소, 호스트명, 비밀번호, 디비이름)
-            $conn = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
+            $conn = mysqli_connect("127.0.0.1", "root", "970107", "opentutorials");
             // 2. 쿼리문 작성(반드시 변수에 저장해야되는건 아님)
             $sql = "select * from notice order by number desc limit 0,10";
           // 3. 작성한 쿼리문을 연결한 디비에 전달하기 위해 mysqli_query(연결한 db, 쿼리문) 사용
