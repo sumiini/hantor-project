@@ -37,22 +37,45 @@
       
       <nav class="intro-main-section">
         
-        <section class="intro-content-section">
-         
-          <form name="add_notice" method="POST" action="notice.php">
-            <section id="noticeTable">
-            <h1>input notice content</h1>
-              <table>
-                <tr>
-                  <td>CONTENT</td>
-                  <td><input type="text" size="100" name="content"></td>
-                </tr>
-              </table>
-            <input type=submit value="submit"><input type=reset value="rewrite">
-          </form>
+        
 
-          
+        <section class="intro-content-section">
+          <table>
+
+          <thead>
+          <tr>
+          <th>No.</th>
+          <th>내용</th>
+          <th>날짜</th>
+          </tr>
+          </thead>
+          <tbody>
+          <?php
+            // phpinfo();
+            // 1, DB 연결 mysqli_connect(호스트 주소, 호스트명, 비밀번호, 디비이름)
+            $conn = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
+            // 2. 쿼리문 작성(반드시 변수에 저장해야되는건 아님)
+            $sql = "select * from notice order by number desc limit 0,10";
+          // 3. 작성한 쿼리문을 연결한 디비에 전달하기 위해 mysqli_query(연결한 db, 쿼리문) 사용
+            $result = mysqli_query($conn, $sql);
+        
+            if(mysqli_num_rows($result)>0){ // 출력할 행이 있을 경우에만 아래 블록 실행
+                while($row = mysqli_fetch_assoc($result)){
+                    echo '<tr><td>'.$row["number"].'</td><td>'.$row["content"].'</td><td>'.$row["date"].'</td></tr>';
+                }
+            }else{ // 테이블에 출력할 행이 없으면 아래 블록 실행
+                echo "no data to print...";
+            }
+
+            mysqli_close($conn);
+        ?>
+        </tbody>
+
+        </table>
+        <input type="button" value="글쓰기" onclick="location='글쓰기.html'">
+
         </section>
+        
         
       </nav>
       <!-- 하단 sns 링크 바 -->
