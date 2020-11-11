@@ -44,12 +44,12 @@
 
           <thead>
           <tr>
-          <th>No.</th>
-          <th>내용</th>
-          <th>날짜</th>
+          <th width="100px">No.</th>
+          <th width="200px">내용</th>
+          <th width="200px">날짜</th>
           </tr>
           </thead>
-          <tbody>
+          <tbody >
           <?php
             // phpinfo();
             // 1, DB 연결 mysqli_connect(호스트 주소, 호스트명, 비밀번호, 디비이름)
@@ -61,7 +61,7 @@
         
             if(mysqli_num_rows($result)>0){ // 출력할 행이 있을 경우에만 아래 블록 실행
                 while($row = mysqli_fetch_assoc($result)){
-                    echo '<tr><td>'.$row["number"].'</td><td>'.$row["content"].'</td><td>'.$row["date"].'</td></tr>';
+                    echo '<tr><td width="100px">'.$row["number"].'</td><td width="200px">'.$row["content"].'</td><td width="200px">'.$row["date"].'</td></tr>';
                 }
             }else{ // 테이블에 출력할 행이 없으면 아래 블록 실행
                 echo "no data to print...";
@@ -72,7 +72,7 @@
         </tbody>
 
         </table>
-        <input type="button" value="글쓰기" onclick="location='글쓰기.html'">
+        <input type="button" value="글쓰기" onclick="location='write.php'">
 
         </section>
         
