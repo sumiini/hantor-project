@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/intro.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
     <title>notice</title>
@@ -51,21 +51,18 @@
           </thead>
           <tbody >
           <?php
-            // phpinfo();
-            // 1, DB 연결 mysqli_connect(호스트 주소, 호스트명, 비밀번호, 디비이름)
+            
             $conn = mysqli_connect("127.0.0.1", "root", "970107", "opentutorials");
-            // 2. 쿼리문 작성(반드시 변수에 저장해야되는건 아님)
             $sql = "select * from notice order by number desc limit 0,10";
-          // 3. 작성한 쿼리문을 연결한 디비에 전달하기 위해 mysqli_query(연결한 db, 쿼리문) 사용
             $result = mysqli_query($conn, $sql);
         
             if(mysqli_num_rows($result)>0){ // 출력할 행이 있을 경우에만 아래 블록 실행
                 while($row = mysqli_fetch_assoc($result)){
                     echo '<tr>
-                    <td width="75px" align=center>'.$row["number"].'</td>
-                    <td width="150px" align=center>'.$row["title"].'</td>
-                    <td width="150px" align=center>'.$row["date"].'</td>
-                    <td width="75px" align=center>'.$row["id"].'</td>
+                    <td width="75px" align="center">'.$row["number"].'</td>
+                    <td width="150px" align=center><a href=view.php?db="opentutorials"&number='.$row["number"].'>'.$row["title"].'</a></td>                    
+                    <td width="150px" align="center">'.$row["date"].'</td>
+                    <td width="75px" align="center">'.$row["id"].'</td>
                     </tr>';
 
                 }
@@ -79,7 +76,6 @@
 
         </table>
         <input type="button" value="글쓰기" onclick="location='write.php'" style='float: right'>
-
 
         </section>
         
