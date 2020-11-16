@@ -77,7 +77,6 @@
         </table>
         <input type="button" value="글쓰기" onclick="location='write.php'" style='float: right'>
 
-
         </section>
         
         
