@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/intro.css">
-    <link rel="stylesheet" href="css/notice.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
     <title>notice</title>
   </head>
@@ -27,29 +26,29 @@
       <!-- 상단 메뉴바  -->
       <nav class="local-menu">
         <div class="local-menu-links">
-          <a href="#" class="local-menu-item">공지사항</a>
+          <a href="index.html" class="local-menu-item" target="_self">Hantor</a>
           <a href="intro.html" class="intro-btn">한터소개</a>
-          <a href="notice.html" class="notice-btn">공지사항</a>
+          <a href="noticemain.php" class="notice-btn">공지사항</a>
           <a href="studyroom.html" class="studyroom-btn">스터디룸</a>
         </div>
       </nav>
 
-      
       <nav class="intro-main-section">
         
         
 
         <section class="intro-content-section">
-          <table>
+          <table clase="postboard" style='margin: auto'>
 
           <thead>
           <tr>
-          <th>No.</th>
-          <th>내용</th>
-          <th>날짜</th>
+            <th width="75px">번호</th>
+            <th width="150px">제목</th>
+            <th width="150px">날짜</th>
+            <th width="75px">작성자</th>
           </tr>
           </thead>
-          <tbody>
+          <tbody >
           <?php
             // phpinfo();
             // 1, DB 연결 mysqli_connect(호스트 주소, 호스트명, 비밀번호, 디비이름)
@@ -61,7 +60,12 @@
         
             if(mysqli_num_rows($result)>0){ // 출력할 행이 있을 경우에만 아래 블록 실행
                 while($row = mysqli_fetch_assoc($result)){
-                    echo '<tr><td>'.$row["number"].'</td><td>'.$row["content"].'</td><td>'.$row["date"].'</td></tr>';
+                    echo '<tr>
+                    <td width="75px" align=center>'.$row["number"].'</td>
+                    <td width="150px" align=center>'.$row["title"].'</td>
+                    <td width="150px" align=center>'.$row["date"].'</td>
+                    <td width="75px" align=center>'.$row["id"].'</td>
+                    </tr>';
                 }
             }else{ // 테이블에 출력할 행이 없으면 아래 블록 실행
                 echo "no data to print...";
@@ -72,12 +76,14 @@
         </tbody>
 
         </table>
-        <input type="button" value="글쓰기" onclick="location='글쓰기.html'">
+        <input type="button" value="글쓰기" onclick="location='write.php'" style='float: right'>
 
         </section>
         
         
       </nav>
+        
+        
       <!-- 하단 sns 링크 바 -->
       <footer class="js-footer">
         <div class="sns_btn">
