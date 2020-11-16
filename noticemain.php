@@ -46,6 +46,7 @@
             <th width="150px">제목</th>
             <th width="150px">날짜</th>
             <th width="75px">작성자</th>
+
           </tr>
           </thead>
           <tbody >
@@ -66,6 +67,7 @@
                     <td width="150px" align=center>'.$row["date"].'</td>
                     <td width="75px" align=center>'.$row["id"].'</td>
                     </tr>';
+
                 }
             }else{ // 테이블에 출력할 행이 없으면 아래 블록 실행
                 echo "no data to print...";
@@ -77,6 +79,7 @@
 
         </table>
         <input type="button" value="글쓰기" onclick="location='write.php'" style='float: right'>
+
 
         </section>
         
