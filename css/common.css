@@ -1,0 +1,159 @@
+/* 공통 css global 및 local 메뉴 & footer 부분 */
+@charset "UTF-8";
+
+html{
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+}
+
+body{
+  overflow-x: hidden;
+  color: rgb(29, 29, 31);
+  letter-spacing: -0.05em;
+  background: white;
+}
+
+
+/* 기본적으로 p 태그의 행간격을 설정 */
+p{
+  line-height: 1.6;
+}
+
+/* link text 스타일 조정 */
+a{
+  color: rgb(29,29,31);
+  text-decoration: none;
+}
+.global-menu{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 44px;
+  padding: 0 1rem;
+}
+
+/* 상단 메뉴바 */
+.local-menu {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  height: 52px;
+  padding: 0 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.local-menu-sticky .local-menu{
+  position: fixed;
+  top: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: saturate(180%) blur(15px);
+}
+
+.global-menu-links, .local-menu-links{
+  display: flex; /* 문자 길이만큼 배치되도록 설정한 것 */
+  align-items: center;
+  height: 100%;
+  max-width: 1000px; /* 최대 1000px로 설정해 화면 크기가 1000px보다 작아지면 저절로 줄어들게 하기 위함*/
+  margin: 0 auto;  /* 가운데 정렬을 해주기 위해 좌우 마진을 0으로 지정하고 auto로 설정 */
+}
+
+.global-menu-links{
+  justify-content: space-between;
+}
+
+.global-menu-links a{
+  font-size: 0.9rem;
+}
+/* 메뉴 부분 */
+.local-menu-links a:not(.local-menu-item){
+  margin-left: 1em;
+  font-size: 0.85rem;
+}
+
+/* 로고(한터 이름) 부분 */
+.local-menu-item{
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto; /* 마진을 auto로 지정하는 이유는 내가 쓸 수 있는 공간을 사용할 수 있는 범위 내에서 최대로 사용하기 위함 */
+}
+
+.menu{
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(12,65,99);
+    border-radius: 50%;
+  
+    cursor: pointer;
+  
+    text-align: center;
+    line-height: 80px;
+  
+    color: white;
+  }
+
+.menu-boxes{
+    display: flex;
+    align-items: center;
+    padding: 10vh 0;
+  }
+  
+.js-footer {
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  position: relative;
+  width: 100%;
+	height: 52px;
+  background: rgb(12,65,99);
+}
+
+.sns_btn button{
+  max-width: 1000px;
+  margin: 0 1rem;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+@media (min-width: 1000px) {
+
+    .local-menu-sticky .local-menu{
+      position: fixed;
+      top: 0;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: saturate(180%) blur(15px);
+    }
+  
+    .local-menu-links a:not(.local-menu-item){
+      margin-left: 2em;
+    }
+
+    .menu-boxes{
+      display: flex;
+      align-items: center;
+      margin: auto;
+    }
+    
+    .menu{
+      margin: auto;
+      width: 120px;
+      height: 120px;
+      background-color: rgb(12,65,99);
+      border-radius: 50%;
+    
+      cursor: pointer;  
+      font-size: 1.4vw;
+      text-align: center;
+      line-height: 120px;
+    
+      color: white;
+    }
+  }
+  
