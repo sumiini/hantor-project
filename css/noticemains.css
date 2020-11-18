@@ -1,0 +1,27 @@
+#tnum,#ttitle,#tdate,#tperson{
+    color:white;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 70px;
+    padding-right: 70px;
+    border:1px solid white;
+    background-color: rgb(43, 89, 117);
+    
+}
+
+#writebtn{
+    margin-top: 25px;
+    margin-bottom:25px;
+    padding:10px 15px;
+    background: rgb(47, 110, 150);
+    border:0 none;
+    font-weight: 600;
+    color: white;
+    border-radius: 10px;
+}
+
+
+
+
