@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/intro.css">
+    <link rel="stylesheet" href="css/noticemains.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
     <title>notice</title>
   </head>
@@ -42,27 +43,28 @@
 
           <thead>
           <tr>
-            <th width="75px">번호</th>
-            <th width="150px">제목</th>
-            <th width="150px">날짜</th>
-            <th width="75px">작성자</th>
+            <th id="tnum" width="75px">번호</th>
+            <th id="ttitle" width="150px">제목</th>
+            <th id="tdate" width="150px">날짜</th>
+            <th id="tperson" width="75px">작성자</th>
 
           </tr>
           </thead>
-          <tbody >
+          <tbody id="tbody" >
+            
           <?php
             
-            $conn = mysqli_connect("127.0.0.1", "root", "970107", "opentutorials");
+            $conn = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
             $sql = "select * from notice order by number desc limit 0,10";
             $result = mysqli_query($conn, $sql);
         
             if(mysqli_num_rows($result)>0){ // 출력할 행이 있을 경우에만 아래 블록 실행
                 while($row = mysqli_fetch_assoc($result)){
                     echo '<tr>
-                    <td width="75px" align="center">'.$row["number"].'</td>
-                    <td width="150px" align=center><a href=view.php?db="opentutorials"&number='.$row["number"].'>'.$row["title"].'</a></td>                    
-                    <td width="150px" align="center">'.$row["date"].'</td>
-                    <td width="75px" align="center">'.$row["id"].'</td>
+                    <td width="75px" align="center" style="font-family:verdana; font-size: medium; border-bottom:1px solid; padding-top:10px; padding-bottom:10px; ">'.$row["number"].'</td>
+                    <td width="150px" align=center" style=" font-family:verdana; font-size: medium; text-align:center; border-bottom:1px solid; padding-top:10px; padding-bottom:10px;""><a href=view.php?db="opentutorials"&number='.$row["number"].'>'.$row["title"].'</a></td>                    
+                    <td width="150px" align="center" style="font-family:verdana; font-size: medium; border-bottom:1px solid; padding-top:10px; padding-bottom:10px;">'.$row["date"].'</td>
+                    <td width="75px" align="center" style="font-family:verdana; font-size: medium; border-bottom:1px solid; padding-top:10px; padding-bottom:10px;">'.$row["id"].'</td>
                     </tr>';
 
                 }
@@ -75,7 +77,7 @@
         </tbody>
 
         </table>
-        <input type="button" value="글쓰기" onclick="location='write.php'" style='float: right'>
+        <input id="writebtn" type="button" value="글쓰기" onclick="location='write.php'" style='float: right'>
 
         </section>
         

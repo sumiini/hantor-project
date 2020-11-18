@@ -9,7 +9,7 @@
 <body>
     <?php
         session_start();
-        $connect = mysqli_connect("127.0.0.1", "dondon", "5Susdpdlf!", "opentutorials");
+        $connect = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
         $number = $_GET['number'];
         
         $query = "select * from notice where number='$number'";

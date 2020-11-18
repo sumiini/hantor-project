@@ -1,7 +1,7 @@
 <?php
     session_start();
  
-    $connect = mysqli_connect("localhost", "dondon", "5Susdpdlf!", "opentutorials") or die("fail");
+    $connect = mysqli_connect("localhost", "root", "sumin8411", "opentutorials") or die("fail");
  
     $id=$_GET['userid']; // 이전 write.php 폼에서 입력받은 아이디값
     $pw=$_GET['userpw']; // 이전 write.php 폼에서 입력받은 비밀번호값
@@ -9,7 +9,7 @@
     $content=$_GET['content'];
  
     //아이디가 있는지 검사
-    $query = "select * from member where id='$id'";
+    $query = "select * from person where id='$id'";
     $result = $connect->query($query);
  
  
