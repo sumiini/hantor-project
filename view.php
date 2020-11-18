@@ -63,7 +63,7 @@
     <?php
         session_start();
         $connect = mysqli_connect("127.0.0.1", "root", "970107", "opentutorials");
-//         $connect = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
+        // $connect = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
         $number = $_GET['number'];
         $query = "select * from notice where number='$number'";
         $result = $connect->query($query);
