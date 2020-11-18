@@ -59,7 +59,7 @@
             if(mysqli_num_rows($result)>0){ // 출력할 행이 있을 경우에만 아래 블록 실행
                 while($row = mysqli_fetch_assoc($result)){
                     echo '<tr>
-                    <td width="75px" align="center">'.$row["number"].'</td>
+                    <td width="75px" align=center>'.$row["number"].'</td>
                     <td width="150px" align=center><a href=view.php?db="opentutorials"&number='.$row["number"].'>'.$row["title"].'</a></td>                    
                     <td width="150px" align="center">'.$row["date"].'</td>
                     <td width="75px" align="center">'.$row["id"].'</td>
@@ -93,7 +93,6 @@
       </footer>
       <script src="footer.js"></script>
     </div>
-    <script src="notice.js"></script>
 
   </body>
 </html>
