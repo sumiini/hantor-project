@@ -61,6 +61,7 @@
             if(mysqli_num_rows($result)>0){ // 출력할 행이 있을 경우에만 아래 블록 실행
                 while($row = mysqli_fetch_assoc($result)){
                     echo '<tr>
+
                     <td width="75px" align="center" style="font-family:verdana; font-size: medium; border-bottom:1px solid; padding-top:10px; padding-bottom:10px; ">'.$row["number"].'</td>
                     <td width="150px" align=center" style=" font-family:verdana; font-size: medium; text-align:center; border-bottom:1px solid; padding-top:10px; padding-bottom:10px;""><a href=view.php?db="opentutorials"&number='.$row["number"].'>'.$row["title"].'</a></td>                    
                     <td width="150px" align="center" style="font-family:verdana; font-size: medium; border-bottom:1px solid; padding-top:10px; padding-bottom:10px;">'.$row["date"].'</td>
@@ -95,7 +96,6 @@
       </footer>
       <script src="footer.js"></script>
     </div>
-    <script src="notice.js"></script>
 
   </body>
 </html>
