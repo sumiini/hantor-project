@@ -54,6 +54,7 @@
             
           <?php
             
+            // $conn = mysqli_connect("127.0.0.1", "root", "970107", "opentutorials");
             $conn = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
             $sql = "select * from notice order by number desc limit 0,10";
             $result = mysqli_query($conn, $sql);
