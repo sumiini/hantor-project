@@ -8,9 +8,9 @@
 
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/intro.css">
     <link rel="stylesheet" href="css/noticemains.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
+
     <title>notice</title>
   </head>
   <body>
@@ -34,12 +34,8 @@
         </div>
       </nav>
 
-      <nav class="intro-main-section">
-        
-        
-
-        <section class="intro-content-section">
-          <table clase="postboard" style='margin: auto'>
+        <section class="notice-content-section">
+          <table clase="postboard" style='margin: 0 auto'>
 
           <thead>
           <tr>
@@ -82,9 +78,7 @@
         <input id="writebtn" type="button" value="글쓰기" onclick="location='write.php'" style='float: right'>
 
         </section>
-        
-        
-      </nav>
+
         
         
       <!-- 하단 sns 링크 바 -->

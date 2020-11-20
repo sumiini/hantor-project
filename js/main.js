@@ -22,6 +22,7 @@
         Images: []
       },
       values: {
+        
         messageA_opacity_in: [0, 1, {start: 0.1, end: 0.2}], 
         messageA_opacity_out: [1, 0, {start: 0.25, end: 0.3}],
         messageA_translateY_in: [20, 0, {start: 0.1, end: 0.2}],
@@ -36,10 +37,10 @@
         messageC_opacity_out: [1, 0, {start: 0.75, end: 0.8}],
         messageC_translateY_in: [20, 0, {start: 0.6, end: 0.7}],
         messageC_translateY_out: [0, -20, {start: 0.75, end: 0.8}],
-
-        messageD_opacity_in: [0, 1, {start: 0.85, end: 1}],
-        messageD_translateY_in: [20, 0, {start: 0.85, end: 1}],
-        messageD_translateY_out: [0, -20, {start: 0.9, end: 1}],
+      
+        messageD_opacity_in: [0, 1, {start: 0.85, end: 0.95}],
+        messageD_translateY_in: [20, 0, {start: 0.85, end: 0.95}],
+        messageD_translateY_out: [0, -20, {start: 0.95, end: 1}],
 
         canvas_opacity: [0, 0.6, {start: 0, end: 1}]
       }
