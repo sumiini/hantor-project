@@ -1,14 +1,11 @@
-#tnum,#ttitle,#tdate,#tperson{
+
+#tnum, #ttitle, #tdate, #tperson{
     color:white;
-    font-size: large;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 70px;
-    padding-right: 70px;
-    border:1px solid white;
+    font-size: 1rem;
+    font-family: verdana;
+    padding: 0.5rem;
+    border: 1px solid white;
     background-color: rgb(43, 89, 117);
-    
 }
 
 #writebtn{
@@ -25,7 +22,7 @@
 .notice-content-section{
     max-width: 1000px;
     padding-top: 15vh;
-    margin: 0 auto;
+    margin: 3vh auto;
     align-items: center;
 }
 
