@@ -25,7 +25,10 @@
 
                 <label for="content"><strong>Content</strong></label><br>
                 <textarea name=content rows=15 placeholder="내용을 입력하세요."></textarea>
- 
+                
+                <label for="file"><strong>File</strong></label>
+                <input id="file" type="file" placeholder="파일 업로드" name="file">
+                <p>
 
                 <div class="clearfix">
                     <button type="submit" class="signupbtn" value="signup">확인</button>

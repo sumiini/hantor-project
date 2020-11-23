@@ -83,6 +83,9 @@
                 <td class="view_id2"><?php echo $rows['id']; ?></td>            
             </tr>
             <tr>
+                <td class="view_file"><a href="" download>파일이름</a></td>
+            </tr>
+            <tr>
                 <td colspan="4" class="view_content" valign="top"><?php echo $rows['content']; ?></td>
             </tr>
         </tbody>

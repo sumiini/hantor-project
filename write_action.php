@@ -25,6 +25,8 @@
             if(isset($_SESSION['userid'])){?>     
             <?php
                 $query2 = "insert into notice(title, content, id) values('$title', '$content', '$id')";
+                //$query3="insert into fileblob(file_id,file_type,file,file_size,file_name) values()"
+
                 $connect->query($query2);    
             ?>
                 <script>
