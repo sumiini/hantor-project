@@ -93,7 +93,7 @@
     <div class="view_btn">
         <a class="view_btn1" href="./noticemain.php">목록으로</a>
         <a class="view_btn1" href="./modify.php?number=<?=$number?>&id=<?=$_SESSION['userid']?>">수정</a>
-        <a class="view_btn1" href="./delete.php?number=<?=$number?>&id=<?=$_SESSION['userid']?>">삭제</a>
+        <a class="view_btn1" href="delete.php?idx=<?php echo $notice['idx']; ?>">삭제</a>
     </div>
 </body>
 </html>
