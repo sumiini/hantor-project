@@ -1,18 +1,36 @@
+h1{
+    font-size: 2rem;
+    font-family: Verdana;
+    margin: 0 auto;
+}
 
-#tnum, #ttitle, #tdate, #tperson{
+.postboard{
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.tnum, .ttitle, .tdate, .tperson{
     color:white;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: verdana;
-    padding: 0.5rem;
     border: 1px solid white;
+    padding: 0.4rem;
     background-color: rgb(43, 89, 117);
 }
 
+.cnum, .ctitle, .cdate, .cperson{
+    text-align: center; 
+    font-family: verdana; 
+    font-size: 0.9rem; 
+    border-bottom:1px solid;
+    padding: 0.7rem 0;
+}
+
 #writebtn{
-    margin-top: 25px;
+    /* margin-top: 25px; */
     margin-bottom:25px;
     padding:10px 15px;
-    background: rgb(47, 110, 150);
+    background: rgb(12,65,99);
     border:0 none;
     font-weight: 600;
     color: white;
@@ -27,5 +45,13 @@
 }
 
 
+@media (max-width: 1000px){
+    #tnum, #ttitle, #tdate, #tperson{
+        /* font-size: 0.7rem; */
+    }
+    h1{
 
+        padding: 0 1rem;
+    }
+}
 

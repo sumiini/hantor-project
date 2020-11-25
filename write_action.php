@@ -2,7 +2,7 @@
     session_start();
  
     // $connect = mysqli_connect("localhost", "root", "sumin8411", "opentutorials") or die("fail");
-    $connect = mysqli_connect("localhost", "root", "sumin8411", "opentutorials") or die("fail");
+    $connect = mysqli_connect("localhost", "root", "970107", "opentutorials") or die("fail");
  
     $id=$_GET['userid']; // 이전 write.php 폼에서 입력받은 아이디값
     $pw=$_GET['userpw']; // 이전 write.php 폼에서 입력받은 비밀번호값
@@ -18,8 +18,8 @@
     
  
     //아이디가 있는지 검사
+    $query = "select * from member where id='$id'";
     // $query = "select * from person where id='$id'";
-    $query = "select * from person where id='$id'";
     $result = $connect->query($query);
  
  
@@ -32,9 +32,9 @@
             $_SESSION['userid']=$id;
             if(isset($_SESSION['userid'])){?>     
             <?php
-                $query2 = "insert into notice(title, content, id,filename) values('$title', '$content', '$id','$filename')";
+                $query2 = "insert into notice(title, content, id, filename) values('$title', '$content', '$id','$filename')";
                 if($filename!=null){
-                    $query3="insert into fileblob(file,file_name) values('$file','$file_name')";
+                    // $query3="insert into fileblob(file,file_name) values('$file','$file_name')";
                     ?>
                      <script>
                         alert("파일이 등록 되었습니다.");

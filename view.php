@@ -62,18 +62,12 @@
 <body>
     <?php
         session_start();
-        $connect = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
         // $connect = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
+        $connect = mysqli_connect("127.0.0.1", "root", "970107", "opentutorials");
         $number = $_GET['number'];
-        
-        $filename=$_GET['filename'];
-
-
         $query = "select * from notice where number='$number'";
         $result = $connect->query($query);
         $rows = mysqli_fetch_assoc($result);
-
-        
     ?>
     <table class="view_table" align=center>
         <thead>

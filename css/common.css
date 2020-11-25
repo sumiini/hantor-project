@@ -86,7 +86,7 @@ a{
     width: 80px;
     height: 80px;
     background-color: rgb(12,65,99);
-    border-radius: 50%;
+    /* border-radius: 50%; */
   
     cursor: pointer;
   
