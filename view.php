@@ -62,12 +62,18 @@
 <body>
     <?php
         session_start();
-        $connect = mysqli_connect("127.0.0.1", "root", "970107", "opentutorials");
+        $connect = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
         // $connect = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
         $number = $_GET['number'];
+        
+        $filename=$_GET['filename'];
+
+
         $query = "select * from notice where number='$number'";
         $result = $connect->query($query);
         $rows = mysqli_fetch_assoc($result);
+
+        
     ?>
     <table class="view_table" align=center>
         <thead>
@@ -83,7 +89,7 @@
                 <td class="view_id2"><?php echo $rows['id']; ?></td>            
             </tr>
             <tr>
-                <td class="view_file"><a href="" download>파일이름</a></td>
+                <td class="view_file"><a href="./<?php echo $rows['filename'] ?>" download><?php echo $rows['filename']; ?></a></td>
             </tr>
             <tr>
                 <td colspan="4" class="view_content" valign="top"><?php echo $rows['content']; ?></td>
@@ -93,7 +99,7 @@
     <div class="view_btn">
         <a class="view_btn1" href="./noticemain.php">목록으로</a>
         <a class="view_btn1" href="./modify.php?number=<?=$number?>&id=<?=$_SESSION['userid']?>">수정</a>
-        <a class="view_btn1" href="delete.php?idx=<?php echo $notice['idx']; ?>">삭제</a>
+        <a class="view_btn1" href="./delete.php?number=<?=$number?>&id=<?=$_SESSION['userid']?>">삭제</a>
     </div>
 </body>
 </html>
