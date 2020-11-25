@@ -30,39 +30,40 @@
           <a href="index.html" class="local-menu-item" target="_self">Hantor</a>
           <a href="intro.html" class="intro-btn">한터소개</a>
           <a href="noticemain.php" class="notice-btn">공지사항</a>
-          <a href="studyroom.html" class="studyroom-btn">스터디룸</a>
+          <a href="#" class="studyroom-btn">x</a>
         </div>
       </nav>
 
       <section class="notice-content-section">
-        <h1 style='font-size: 2rem; font-family:verdana;'>공지사항</h1>
-        <table clase="postboard" style='margin: 7vh auto;'>
+        <h1>공지사항</h1>
+        <table class="postboard" style='margin: 7vh auto;'>
 
           <thead>
             <tr>
-              <th id="tnum" width="75px">번호</th>
-              <th id="ttitle" width="150px">제목</th>
-              <th id="tdate" width="150px">날짜</th>
-              <th id="tperson" width="75px">작성자</th>
+              <th class="tnum" width="75px">번호</th>
+              <th class="ttitle" width="150px">제목</th>
+              <th class="tdate" width="150px">날짜</th>
+              <th class="tperson" width="75px">작성자</th>
 
             </tr>
           </thead>
+
           <tbody id="tbody" >
               
             <?php
               
               $conn = mysqli_connect("127.0.0.1", "root", "970107", "opentutorials");
               // $conn = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
-              $sql = "select * from notice order by number desc limit 0,20";
+              $sql = "select * from notice order by number desc limit 0,15";
               $result = mysqli_query($conn, $sql);
 
               if(mysqli_num_rows($result)>0){ // 출력할 행이 있을 경우에만 아래 블록 실행
                   while($row = mysqli_fetch_assoc($result)){
                       echo '<tr>
-                      <td width="75px" align="center" style="font-family:verdana; font-size: medium; border-bottom:1px solid; padding-top:10px; padding-bottom:10px; ">'.$row["number"].'</td>
-                      <td width="150px" align=center" style=" font-family:verdana; font-size: medium; text-align:center; border-bottom:1px solid; padding-top:10px; padding-bottom:10px;""><a href=view.php?db="opentutorials"&number='.$row["number"].'>'.$row["title"].'</a></td>                    
-                      <td width="150px" align="center" style="font-family:verdana; font-size: medium; border-bottom:1px solid; padding-top:10px; padding-bottom:10px;">'.$row["date"].'</td>
-                      <td width="75px" align="center" style="font-family:verdana; font-size: medium; border-bottom:1px solid; padding-top:10px; padding-bottom:10px;">'.$row["id"].'</td>
+                      <td class="cnum">'.$row["number"].'</td>
+                      <td class="ctitle"><a href=view.php?db="opentutorials"&number='.$row["number"].'>'.$row["title"].'</a></td>                    
+                      <td class="cdate">'.$row["date"].'</td>
+                      <td class="cperson">'.$row["id"].'</td>
                       </tr>';
 
                   }
