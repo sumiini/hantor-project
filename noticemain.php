@@ -39,6 +39,9 @@
         <?php
           session_start();
           $connect = mysqli_connect("localhost", "root", "970107", "opentutorials") or die("fail");
+          // $connect = mysqli_connect("127.0.0.1", "root", "sumin8411", "opentutorials");
+          // pull 받고 내꺼 주석처리하고 너꺼 주석 풀고 해
+
           // $page : GET 메소드로 현재 페이지 번호를 확인하기 위한 변수
           if(isset($_GET['page'])){
             $page = $_GET['page'];
@@ -140,6 +143,7 @@
         </div>
       </footer>
       <script src="footer.js"></script>
+      <script src="js/notice.js" charset="utf-8"></script>
     </div>
 
   </body>
