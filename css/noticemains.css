@@ -25,6 +25,28 @@ h1{
     border-bottom:1px solid;
     padding: 0.7rem 0;
 }
+#page_num {
+    font-size: 14px;
+    margin: 0 auto;
+    margin-bottom: 10%;
+}
+#page_num ul li {
+    float: left;
+    margin-left: 10px; 
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 1rem 0;
+}
+
+.fo_re {
+    font-weight: bold;
+    color: rgb(43, 89, 117);
+}
 
 #writebtn{
     /* margin-top: 25px; */
