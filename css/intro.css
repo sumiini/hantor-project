@@ -41,16 +41,7 @@ li{
   align-items: center;
   text-align: left;
 }
-.js-footer {
-	display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0;
-  position: relative;
-  width: 100%;
-	height: 52px;
-  background: rgb(12,65,99);
-}
+
 
 @media (min-width: 800px){
   p{

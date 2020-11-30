@@ -80,27 +80,6 @@ a{
   font-weight: bold;
   margin-right: auto; /* 마진을 auto로 지정하는 이유는 내가 쓸 수 있는 공간을 사용할 수 있는 범위 내에서 최대로 사용하기 위함 */
 }
-
-.menu{
-    margin: auto;
-    width: 80px;
-    height: 80px;
-    background-color: rgb(12,65,99);
-    /* border-radius: 50%; */
-  
-    cursor: pointer;
-  
-    text-align: center;
-    line-height: 80px;
-  
-    color: white;
-  }
-
-.menu-boxes{
-    display: flex;
-    align-items: center;
-    padding: 10vh 0;
-  }
   
 .js-footer {
 	display: flex;

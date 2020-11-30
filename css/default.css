@@ -48,3 +48,9 @@ button {
 	background: transparent;
 	cursor: pointer;
 }
+
+::-webkit-scrollbar { width: 1rem; } /* 스크롤 바 */
+::-webkit-scrollbar-track { background-color:white; } /* 스크롤 바 밑의 배경 */
+::-webkit-scrollbar-thumb { background: #404040;} /* 실질적 스크롤 바 */
+::-webkit-scrollbar-thumb:hover { background: #808080; } /* 실질적 스크롤 바 위에 마우스를 올려다 둘 때 */
+::-webkit-scrollbar-thumb:active { background: rgb(12,65,99); } /* 실질적 스크롤 바를 클릭할 때 */
