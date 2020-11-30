@@ -22,24 +22,12 @@
   margin: 1.2rem auto;
 }
 
-
-.img-professor{
-  width: 20%;
-  float: left;
-}
-
-.intro-professor{
+.deptd, .pland{
+  width: 80%;
+  display: flex;
+  justify-content: center;
   align-items: center;
-
-}
-.img-professor img{
-  object-fit: contain;
-}
-
-li{
   margin: 0 auto;
-  align-items: center;
-  text-align: left;
 }
 
 
