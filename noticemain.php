@@ -30,7 +30,6 @@
           <a href="index.html" class="local-menu-item" target="_self">Hantor</a>
           <a href="intro.html" class="intro-btn">한터소개</a>
           <a href="noticemain.php" class="notice-btn">공지사항</a>
-          <a href="#" class="studyroom-btn">x</a>
         </div>
       </nav>
 
